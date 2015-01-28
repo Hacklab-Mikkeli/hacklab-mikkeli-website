@@ -1,0 +1,13 @@
+{
+  "name": "HacklabWebsite",
+  "version": "0.0.0",
+  "description": "website for hacklab mikkeli",
+  "main": "app.js",
+  "author": {
+    "name": "Belvain",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "*"
+  }
+}
