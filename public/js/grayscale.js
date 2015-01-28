@@ -31,16 +31,34 @@ $('.navbar-collapse ul li a').click(function() {
 
 $('#subscribe-button').click(function(){
   var email = $('#get-info-email').val();
-  $('.subscribe-spinner').show();
-  if(typeof(email) != 'undefined' && email != ''){
+  $('.subscribe-error').hide();
+  $('.subscribe-error-message').hide();
+  if($('#get-info-email')[0].validity.valid){
     $.post('/subscribe', {email: email}, function(data){
-      $('.subscribe-spinner').hide();
-      $('#get-info-email').val('');
-      $('.subscribe-success').show('slow', function(){
-        setTimeout(function(){
-          $('.subscribe-success').hide('fast');
-        }, 3000);
+      $('.subscribe-spinner').hide('slow', function(){
+        if(typeof(data.error) == 'undefined'){
+          $('.subscribe-success').show('slow', function(){
+            $('#get-info-email').val('');
+            setTimeout(function(){
+              $('.subscribe-success').hide('fast');
+            }, 3000);
+          });
+        }else{
+          $('.subscribe-error-message').text(data.error);
+          $('.subscribe-error').show('slow');
+          $('.subscribe-error-message').show('slow');
+        }
+      });
+    }).fail(function(){
+      $('.subscribe-spinner').hide('slow', function(){
+        $('.subscribe-error-message').text('Tuntematon virhe!');
+        $('.subscribe-error').show('slow');
+        $('.subscribe-error-message').show('slow');
       });
     });
+  }else {
+    $('.subscribe-error-message').text('Syötä sähköpostiosoite.');
+    $('.subscribe-error').show('slow');
+    $('.subscribe-error-message').show('slow');
   }
 });

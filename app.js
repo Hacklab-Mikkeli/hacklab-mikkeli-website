@@ -28,7 +28,11 @@ app.post('/subscribe', function(req, res){
   mc.lists.subscribe({id: auth.mailchimpListId, email:{email:req.body.email}, double_optin: false}, function(data) {
     res.send(data);
   }, function(err) {
-    console.log(err);
+    var errMsg = err.error;
+    if(typeof(errMsg) == 'undefined'){
+      errMsg = 'Tuntematon virhe!';
+    }
+    res.send({error: errMsg});
   });
 });
 

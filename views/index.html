@@ -107,11 +107,12 @@
                     Parhaiten mukaan pääsee ottamalla yhteyttä muuhun porukkaan. Menetelmät löydät <a class="page-scroll" href="#contact">yhteystiedot</a> - osiosta.</p>
                     <p>Syöttämällä sähköpostiosoitteesi, saat tietoa labin kehityksestä.</p>
                     <div class="form-inline">
-                      <input type="email" class="form-control input-lg" id="get-info-email" placeholder="your@email.com"/>
+                      <input type="email" class="form-control input-lg" id="get-info-email" placeholder="your@email.com" required />
                       <button id="subscribe-button" class="btn btn-default btn-lg">Lähetä</button>
-                      <i style="display:none;" class="fa fa-spinner fa-spin subscribe-spinner"></i>
+                      <i style="display:none;" class="fa fa-spinner fa-spin subscribe-icon subscribe-spinner"></i>
+                      <i style="display:none;" class="fa fa-check subscribe-icon subscribe-success"></i>
+                      <i style="display:none;" class="fa fa-times subscribe-icon subscribe-error"></i><span style="display:none;" class='subscribe-error-message'>Tuntematon virhe!</span>
                     </div>
-                    <div style="display:none;" class="alert alert-success subscribe-success" role="alert">Sähköposti vastaanotettu!</div>
                 </div>
             </div>
         </div>
