@@ -8,6 +8,8 @@
     "email": ""
   },
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "mailchimp-api": "*",
+    "body-parser": "*"
   }
 }

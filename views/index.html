@@ -103,13 +103,15 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Kuinka osallistun?</h2>
-                    <p>Toiminta on tällä hetkellä käynnistysvaiheessa ja mukaan toivotaan lisää asiasta kiinnostuineita.
+                    <p>Toiminta on tällä hetkellä käynnistysvaiheessa ja mukaan toivotaan lisää asiasta kiinnostuneita.
                     Parhaiten mukaan pääsee ottamalla yhteyttä muuhun porukkaan. Menetelmät löydät <a class="page-scroll" href="#contact">yhteystiedot</a> - osiosta.</p>
                     <p>Syöttämällä sähköpostiosoitteesi, saat tietoa labin kehityksestä.</p>
                     <div class="form-inline">
-                      <input type="email" class="form-control input-lg" id="get-info-email"/>
-                      <button class="btn btn-default btn-lg">Lähetä</button>
+                      <input type="email" class="form-control input-lg" id="get-info-email" placeholder="your@email.com"/>
+                      <button id="subscribe-button" class="btn btn-default btn-lg">Lähetä</button>
+                      <i style="display:none;" class="fa fa-spinner fa-spin subscribe-spinner"></i>
                     </div>
+                    <div style="display:none;" class="alert alert-success subscribe-success" role="alert">Sähköposti vastaanotettu!</div>
                 </div>
             </div>
         </div>

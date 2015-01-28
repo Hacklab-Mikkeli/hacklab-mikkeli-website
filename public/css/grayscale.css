@@ -295,7 +295,27 @@ a:focus {
     line-height: 1.33333;
     border-radius: 6px;
 }
-
+.subscribe-spinner {
+	color: #219AB3;
+	font-weight: 400;
+	font-size:32px !important;
+	line-height: 1.33333;
+	vertical-align:middle;
+	margin-left:5px;
+}
+.subscribe-success {
+	margin-top:10px;
+}
+.alert-success {
+    color: #3C763D;
+    background-color: transparent;
+    border-color: #3C763D;
+    font-size: 18px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.33333;
+    font-size: 18px;
+    text-transform: uppercase;
+}
 .btn {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;

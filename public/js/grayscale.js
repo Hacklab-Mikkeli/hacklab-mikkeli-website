@@ -28,3 +28,19 @@ $(function() {
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$('#subscribe-button').click(function(){
+  var email = $('#get-info-email').val();
+  $('.subscribe-spinner').show();
+  if(typeof(email) != 'undefined' && email != ''){
+    $.post('/subscribe', {email: email}, function(data){
+      $('.subscribe-spinner').hide();
+      $('#get-info-email').val('');
+      $('.subscribe-success').show('slow', function(){
+        setTimeout(function(){
+          $('.subscribe-success').hide('fast');
+        }, 3000);
+      });
+    });
+  }
+});
