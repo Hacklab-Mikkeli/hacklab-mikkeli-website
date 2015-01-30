@@ -8,7 +8,7 @@ var http = require('http');
 var path = require('path');
 var bodyParser = require('body-parser');
 var mcapi = require('./node_modules/mailchimp-api/mailchimp');
-var conf = require('config.js');
+var conf = require('./config.js');
 var mc = new mcapi.Mailchimp(conf.auth.mailchimpApiKey);
 
 var app = express();
