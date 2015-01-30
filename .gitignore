@@ -13,3 +13,4 @@ node_modules
 .npmignore
 .project
 .settings
+config.js
