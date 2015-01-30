@@ -1,0 +1,16 @@
+var config = {
+  auth: {
+  
+   /*
+    * Api key you can get from your mailchimp account
+    */
+    mailchimpApiKey : '',
+    
+   /*
+    * Id of mailchimp list that you wish to add people submitting their emails
+    */
+    mailchimpListId : ''
+  }  
+};
+
+module.exports = config;

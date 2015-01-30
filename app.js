@@ -8,8 +8,8 @@ var http = require('http');
 var path = require('path');
 var bodyParser = require('body-parser');
 var mcapi = require('./node_modules/mailchimp-api/mailchimp');
-var auth = require('./config/auth');
-var mc = new mcapi.Mailchimp(auth.mailchimpApiKey);
+var conf = require('config.js');
+var mc = new mcapi.Mailchimp(conf.auth.mailchimpApiKey);
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/subscribe', function(req, res){
-  mc.lists.subscribe({id: auth.mailchimpListId, email:{email:req.body.email}, double_optin: false}, function(data) {
+  mc.lists.subscribe({id: conf.auth.mailchimpListId, email:{email:req.body.email}, double_optin: false}, function(data) {
     res.send(data);
   }, function(err) {
     var errMsg = err.error;
