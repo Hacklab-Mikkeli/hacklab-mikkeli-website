@@ -34,6 +34,7 @@ $('#subscribe-button').click(function(){
   $('.subscribe-error').hide();
   $('.subscribe-error-message').hide();
   if($('#get-info-email')[0].validity.valid){
+    $('.subscribe-spinner').show();
     $.post('/subscribe', {email: email}, function(data){
       $('.subscribe-spinner').hide('slow', function(){
         if(typeof(data.error) == 'undefined'){
