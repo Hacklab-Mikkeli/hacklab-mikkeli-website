@@ -63,3 +63,36 @@ $('#subscribe-button').click(function(){
     $('.subscribe-error-message').show('slow');
   }
 });
+
+var MAX_FEED_ITEMS = 3;
+var WORD_COUNT = 50;
+
+function strip(html) {
+  var tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  var text = tmp.textContent || tmp.innerText || "";
+  var words = text.split(' ');
+  if (words.length < WORD_COUNT) {
+    return text;
+  } else {
+    text = "";
+    for (var i = 0; i < WORD_COUNT; i++) {
+      text += ' ' + words[i];
+    }
+    return text + '...';
+  }
+}
+
+$.get('http://mikkeli.hacklab.fi/blog/rss/', function (feed) {
+  count = 0;
+  $(feed).find('item').each(function () {
+    if (count < MAX_FEED_ITEMS) {
+      var el = $(this);
+      var title = el.find("title").text();
+      var link = el.find("link").text();
+      var content = strip(el.find("description").text());
+      $('#latest-blog-posts').append('<div class="col-lg-8 col-lg-offset-2"><a href="'+link+'"><h3>'+title+'</h3></a><p class="blog-post-content">'+content+'</p></div>');
+    }
+    count++;
+  });
+});

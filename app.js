@@ -15,7 +15,7 @@ var app = express();
 
 
 // all environments
-app.set('port', process.env.PORT || 9006);
+app.set('port', 9006);
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
