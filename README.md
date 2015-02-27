@@ -1,4 +1,4 @@
-Source of http://hacklab.mikkeli.fi website
+Source of http://mikkeli.hacklab.fi website
 
 Frontend is based on theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
 
