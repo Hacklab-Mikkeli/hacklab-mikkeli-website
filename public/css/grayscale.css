@@ -403,3 +403,9 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
+.sponsor-logo {
+	max-width:400px;
+}
+#rek-logo {
+	border-radius:10px;
+}
