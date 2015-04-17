@@ -1,0 +1,24 @@
+{
+    "api": "0.13",
+    "space": "Mikkeli Hacklab",
+    "logo": "http://mikkeli.hacklab.fi/img/logo.png",
+    "url": "http://mikkeli.hacklab.fi",
+    "location": {
+        "address": "Pietarinkatu 23 E 22, 50100 Mikkeli",
+        "lon": 27.262506,
+        "lat": 61.693153
+    },
+    "contact": {
+        "twitter": "@hacklabmikkeli",
+        "irc": "irc://irc.freenode.net/hacklabmikkeli"
+    },
+    "issue_report_channels": [
+        "twitter"
+    ],
+    "state": {
+        "open": null
+    },
+    "projects": [
+        "http://github.com/hacklabmikkeli"
+    ]
+ 
